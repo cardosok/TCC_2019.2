@@ -16,6 +16,7 @@
 
 const char *ssid = "VIVOFIBRA-6876";
 const char *password = "2evzd47Brd";
+const String ipPort = "http://192.168.15.7:3000/"
 
 DHT dht(DHTPIN, DHTTYPE); // Inicializando DHT
 
@@ -115,10 +116,10 @@ void http(float temperatura, float umidadeSolo, float umidadeAr) {
   //Post Data
   String json = "{ \"umidadeDoSolo\" : \"" + umidadeSoloString + "\" , \"temperaturaDoAr\":" + temperaturaString + ", \"umidade\": " + umidadeArString + "}";
 
-  httpClient.begin(client, "http://192.168.15.7:3000/");
+  httpClient.begin(client, ipPort);
   httpClient.addHeader("Content-Type", "application/json");
+  
   //Specify content-type header
-
   Serial.println(json);
   int httpCode = httpClient.POST(json);   //Send the request
   String payload = httpClient.getString();    //Get the response payload
