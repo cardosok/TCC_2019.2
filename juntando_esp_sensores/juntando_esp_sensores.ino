@@ -16,7 +16,7 @@
 
 const char *ssid = "VIVOFIBRA-6876";
 const char *password = "2evzd47Brd";
-const String ipPort = "http://192.168.15.7:3000/"
+const String ipPort = "http://192.168.15.7:3000/";
 
 DHT dht(DHTPIN, DHTTYPE); // Inicializando DHT
 
